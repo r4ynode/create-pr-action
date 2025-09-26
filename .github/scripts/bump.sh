@@ -2,7 +2,7 @@
 
 # GitHub からGitタグをまとめてフェッチして最新バージョンを取り出す
 git fetch --tag 2>/dev/null
-version="$(git tag --sort=-v:refname | head -1 | sed 's/^//')"
+version="$(git tag --sort=-v:refname | head -1 | sed 's/^v//')"
 
 # 指定されたバージョンアップレベルに基づいて、新しいバージョンを算出
 IFS='.' read -ra tokens <<<"${version:-0.0.0}"
